@@ -2,26 +2,28 @@
 #include "raymath.h"
 #include <iostream>
 
+
 class stick
 {
     private:
-        Vector2 start,end;
+        Vector2 p1,p2;
         float theta = PI/2;
         
 
     public:
-        void setPos(Vector2 , float);
+        void setPos(Vector2 ,Vector2);
         void draw();
 
 };
-void stick::setPos(Vector2 st,float th){
-    start = st;
-    end = {st.x*sinf(theta),st.y*sinf(theta)};
-    std::cout << end.x  << " " << end.y; 
+void stick::setPos(Vector2 st,Vector2 en){
+    p1= st;
+    p2= en;
+    theta = (p1.y-p2.y)/(p1.x-p2.x);
+    std::cout << theta; 
 }
 void stick::draw(){
 
-    DrawLineV(start , end,WHITE);
+    DrawLineV(p1,p2,WHITE);
 
 }
 

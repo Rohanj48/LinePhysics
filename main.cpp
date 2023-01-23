@@ -16,8 +16,10 @@ int main(void)
 
     // Main game loop
 
-    stick s1;
-    s1.setPos({100,100},PI/2);
+    stick s1,s2; 
+    s1.setPos({100,150},{300,100});
+    s2. setPos({100,400},{300,300});
+
 
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -33,6 +35,9 @@ int main(void)
             ClearBackground(BLUE);
 
             s1.draw();
+
+            s2.draw();
+
             //DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
         EndDrawing();
